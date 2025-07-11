@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background: #f9f9f9;
+  color: #333;
+}
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  padding: 80px 20px;
+}
+.hero-text {
+  width: 50%;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+.hero-text .btn {
+  margin-top: 20px;
+  background: #fff;
+  color: #0077b6;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.hero-img {
+  width: 40%;
+}
+.hero-img img {
+  max-width: 100%;
+}
+.about p {
+  max-width: 600px;
+  margin: auto;
+}
+.faculty .cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100px;
+  border-radius: 50%;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+.syllabus ul {
+  list-style-type: none;
+}
+.syllabus li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+.testimonials {
+  background: #eeeeee;
+}
+#testimonial-box {
+  max-width: 600px;
+  margin: auto;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+.contact input, .contact textarea {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+}
+.contact button {
+  padding: 10px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
