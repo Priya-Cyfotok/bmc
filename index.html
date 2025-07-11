@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simple Website Layout</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header class="header">
+        <h1>My Website Header</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+   <section class="hero-slider">
+  <div class="slides-container" id="slides">
+    <div class="slide s2">
+      <div class="slide-content">
+        <h2>Welcome to Cyfotok</h2>
+        <p>Explore cybersecurity with real projects</p>
+        <a href="#courses" class="slide-btn">Explore Courses</a>
+      </div>
+    </div>
+    <div class="slide s2">
+      <div class="slide-content">
+        <h2>Digital Marketing Training</h2>
+        <p>Learn to grow brands and drive traffic</p>
+        <a href="#dm" class="slide-btn">View Program</a>
+      </div>
+    </div>
+    <div class="slide s2">
+      <div class="slide-content">
+        <h2>Web Development</h2>
+        <p>Full Stack MERN training with real-time labs</p>
+        <a href="#web" class="slide-btn">Join Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="navigation">
+    <span class="dot" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+  </div>
+</section>
+
+    
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Some sidebar content here.</p>
+        </aside>
+
+        <main class="main-content">
+            <h2>Main Content Area</h2>
+            <p>This is where the main content goes.</p>
+        </main>
+
+    </div>
+
+    <section class="cards-section">
+    <h2>Our Services</h2>
+    <div class="cards-container">
+        <div class="card">
+
+<img src="" alt="">
+            <h3>image - name</h3>
+            <p>Short description for card one.</p>
+            <button>Learn More</button>
+            <div class="sizes">
+                <p>xs</p>
+            <p>xl</p>
+            <p>l</p>
+            </div>
+        </div>
+        <div class="card">
+            <h3>Card Title 2</h3>
+            <p>Short description for card two.</p>
+            <button>Learn More</button>
+        </div>
+        <div class="card">
+            <h3>Card Title 3</h3>
+            <p>Short description for card three.</p>
+            <button>Learn More</button>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+ <section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Type your message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3795940731175!2d80.23194711482348!3d13.08268099078032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665dfdfe6a9f%3A0x5d1220a00d99d820!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1627812345678!5m2!1sen!2sin" 
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section> 
+
+
+
+    <footer class="footer">
+        <p>Footer Information</p>
+    </footer>
+
+
+
+  <script>
+  let currentSlide = 0;
+  const totalSlides = 3;
+  const slidesContainer = document.getElementById('slides');
+
+  function goToSlide(index) {
+    currentSlide = index;
+    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function autoSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    goToSlide(currentSlide);
+  }
+
+  setInterval(autoSlide, 5000);
+</script>
+
+
+</body>
+</html>
