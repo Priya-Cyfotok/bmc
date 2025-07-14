@@ -1,163 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Simple Website Layout</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computer Science Department</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #f6f8fa, #dbe9f4);
+      color: #222;
+    }
+    nav {
+      background: #0047ab;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0047ab;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      padding: 80px 20px;
+    }
+    .hero-text {
+      flex: 1;
+      max-width: 500px;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #d72638;
+    }
+    .hero-text p {
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+    .btn {
+      background: #7c3aed;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .hero-img img {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      text-align: left;
+    }
+    .about-text {
+      flex: 1;
+      max-width: 500px;
+      padding: 20px;
+    }
+    .about-img {
+      flex: 1;
+      max-width: 400px;
+    }
+    .about-img img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .syllabus .btn {
+      background: #0066cc;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    #testimonial-box {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      background: #e0f7fa;
+      padding: 20px;
+      border-radius: 12px;
+      font-style: italic;
+      color: #006064;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact input, .contact textarea {
+      margin: 10px 0;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contact button {
+      background: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    footer {
+      background: #0047ab;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="header">
-        <h1>My Website Header</h1>
-    </header>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#faculty">Faculty</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#syllabus">Syllabus</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Welcome to the Department of Computer Science</h1>
+      <p>Empowering innovators, developers, and tech leaders of tomorrow.</p>
+      <a href="#about" class="btn">Get Started</a>
+    </div>
+    <div class="hero-img">
+      <img src="https://assets.codepen.io/564709/internal/avatars/users/default.png" alt="3D Hero Image">
+    </div>
+  </section>
 
+  <section id="about" class="about">
+    <div class="about-text">
+      <h2>About Our Department</h2>
+      <p>Our department is committed to providing students with strong foundations in computing, problem-solving, and innovation to meet the evolving needs of the tech industry.</p>
+    </div>
+    <div class="about-img">
+      <img src="https://source.unsplash.com/400x300/?technology,computer" alt="About Image">
+    </div>
+  </section>
 
-   <section class="hero-slider">
-  <div class="slides-container" id="slides">
-    <div class="slide s2">
-      <div class="slide-content">
-        <h2>Welcome to Cyfotok</h2>
-        <p>Explore cybersecurity with real projects</p>
-        <a href="#courses" class="slide-btn">Explore Courses</a>
+  <section id="faculty" class="faculty">
+    <h2>Our Faculty</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Principal">
+        <h3>Dr. Priya Raj</h3>
+        <p>Principal</p>
+      </div>
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teacher">
+        <h3>Mr. Santhosh Kumar</h3>
+        <p>Senior Lecturer</p>
       </div>
     </div>
-    <div class="slide s2">
-      <div class="slide-content">
-        <h2>Digital Marketing Training</h2>
-        <p>Learn to grow brands and drive traffic</p>
-        <a href="#dm" class="slide-btn">View Program</a>
-      </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/160x120/?tech,1" />
+      <img src="https://source.unsplash.com/160x120/?tech,2" />
+      <img src="https://source.unsplash.com/160x120/?tech,3" />
+      <img src="https://source.unsplash.com/160x120/?tech,4" />
+      <img src="https://source.unsplash.com/160x120/?tech,5" />
+      <img src="https://source.unsplash.com/160x120/?tech,6" />
+      <img src="https://source.unsplash.com/160x120/?tech,7" />
+      <img src="https://source.unsplash.com/160x120/?tech,8" />
+      <img src="https://source.unsplash.com/160x120/?tech,9" />
+      <img src="https://source.unsplash.com/160x120/?tech,10" />
     </div>
-    <div class="slide s2">
-      <div class="slide-content">
-        <h2>Web Development</h2>
-        <p>Full Stack MERN training with real-time labs</p>
-        <a href="#web" class="slide-btn">Join Now</a>
-      </div>
+  </section>
+
+  <section id="syllabus" class="syllabus">
+    <h2>Syllabus</h2>
+    <a href="#" class="btn">Download Brochure</a>
+  </section>
+
+  <section class="testimonials">
+    <h2>Student Testimonials</h2>
+    <div id="testimonial-box">
+      <p id="testimonial-text">Cyfotok gave me the confidence to launch my career in cybersecurity!</p>
     </div>
-  </div>
+  </section>
 
-  <div class="navigation">
-    <span class="dot" onclick="goToSlide(0)"></span>
-    <span class="dot" onclick="goToSlide(1)"></span>
-    <span class="dot" onclick="goToSlide(2)"></span>
-  </div>
-</section>
-
-    
-
-    <div class="container">
-
-        <aside class="sidebar">
-            <h2>Sidebar</h2>
-            <p>Some sidebar content here.</p>
-        </aside>
-
-        <main class="main-content">
-            <h2>Main Content Area</h2>
-            <p>This is where the main content goes.</p>
-        </main>
-
-    </div>
-
-    <section class="cards-section">
-    <h2>Our Services</h2>
-    <div class="cards-container">
-        <div class="card">
-
-<img src="" alt="">
-            <h3>image - name</h3>
-            <p>Short description for card one.</p>
-            <button>Learn More</button>
-            <div class="sizes">
-                <p>xs</p>
-            <p>xl</p>
-            <p>l</p>
-            </div>
-        </div>
-        <div class="card">
-            <h3>Card Title 2</h3>
-            <p>Short description for card two.</p>
-            <button>Learn More</button>
-        </div>
-        <div class="card">
-            <h3>Card Title 3</h3>
-            <p>Short description for card three.</p>
-            <button>Learn More</button>
-        </div>
-        
-    </div>
-</section>
-
-
-
-
- <section class="contact-section">
+  <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <div class="contact-wrapper">
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" rows="5" placeholder="Type your message" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3795940731175!2d80.23194711482348!3d13.08268099078032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52665dfdfe6a9f%3A0x5d1220a00d99d820!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1627812345678!5m2!1sen!2sin" 
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </div>
-</section> 
-
-
-
-    <footer class="footer">
-        <p>Footer Information</p>
-    </footer>
-
-
+  <footer>
+    <p>Contact: +91-9876543210 | Email: csdept@example.com | Location: XYZ College Campus, Tamil Nadu</p>
+    <p>&copy; 2025 Department of Computer Science</p>
+  </footer>
 
   <script>
-  let currentSlide = 0;
-  const totalSlides = 3;
-  const slidesContainer = document.getElementById('slides');
-
-  function goToSlide(index) {
-    currentSlide = index;
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-  }
-
-  function autoSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    goToSlide(currentSlide);
-  }
-
-  setInterval(autoSlide, 5000);
-</script>
-
+    const testimonials = [
+      "This department gave me the confidence to launch my career in cybersecurity!",
+      "The syllabus is practical and faculty are supportive.",
+      "Projects helped me learn real-world problem solving."
+    ];
+    let current = 0;
+    function showNextTestimonial() {
+      current = (current + 1) % testimonials.length;
+      document.getElementById("testimonial-text").innerText = testimonials[current];
+    }
+    setInterval(showNextTestimonial, 3000);
+  </script>
 
 </body>
 </html>
